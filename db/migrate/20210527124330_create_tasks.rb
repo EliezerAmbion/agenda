@@ -8,7 +8,7 @@ class CreateTasks < ActiveRecord::Migration[6.1]
 
       t.timestamps
 
-      t.references :journal
+      t.references :category
       t.references :user
     end
   end
