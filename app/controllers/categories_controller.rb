@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @category = Category.all
+    @categories = Category.all
   end
 
   def new
@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
       redirect_to home_path
 
     else
-      render :new
+      render :edit
     end
   end
 

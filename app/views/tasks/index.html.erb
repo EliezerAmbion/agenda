@@ -1,0 +1,10 @@
+<br><br>
+
+
+<% @tasks.each do |task| %>
+  <p> ID: <%= task.id %> </p>
+  <p> Title: <%= task.title %> </p>
+
+<% end %>
+
+<%= link_to "Add Task", new_category_task_path(@category) %>

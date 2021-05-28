@@ -13,6 +13,9 @@
 one:
   title: My title
   description: My description
+  deadline: Date.today
+  done: false
+  category_id: 100
 # one:
 #   id: 9a873342-295b-426c-b396-c816330ee72e
 #   title: Create First Task
