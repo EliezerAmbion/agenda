@@ -1,45 +1,33 @@
-<nav class="border-b-2 border-pink-300 font-montez">
-  <div class="flex justify-between max-w-6xl mx-auto py-4 px-2 text-gray-50 items-center">
-    <div class="font-extrabold text-4xl">Agenda</div>
+<%= render "shared/nav" %>
+<br>
 
-    <div class="flex justify-between w-2/5 text-2xl font-normal">
-      <div class="flex items-center hover:bg-pink-300 hover:text-gray-700 rounded-sm px-2">
-        <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-        <%= link_to 'Home', home_path %>
-      </div>
 
-      <div class="flex items-center hover:bg-pink-300 hover:text-gray-700 rounded-sm px-2">
-        <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-        </svg>
-        <%= link_to 'Add Agenda', new_category_path %>
-      </div>
+<% if @categories.count == 0 %>
 
-      <div class="flex items-center hover:bg-pink-300 hover:text-gray-700 rounded-sm px-2">
-        <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-       <span>Profile</span>
-      </div>
-    </div>
+  <div class="flex justify-center">
+    <%= image_tag("to-do-list-animate.svg", class:"w-1/3") %>
   </div>
 
-</nav>
+  <div class="flex justify-center text-3xl space-x-5">
+    <h1>No Agendas yet. </h1>
+    <%= link_to 'Create one now!', new_category_path, class: "text-pink-300 hover:text-pink-600"%>
+  </div>
 
+<% else %>
+  <div class="flex">
+    <% @categories.each do |category| %>
+      <%= link_to category_tasks_path(category) do %>
+        <div class="w-1/4 mx-auto flex-col space-y-3 p-6 bg-gray-200 rounded-lg shadow-xl text-black">
 
-<br><br>
-<% @categories.each do |category| %>
+        <%= link_to 'Update', edit_category_path(category) %>
+        <%= link_to 'Delete', category_path(category), method: :delete, data: { confirm: "Are you sure you want to delete this article?" } %>
 
-  <p> <%= category.title %> </p>
-
-  <%= link_to 'Show', category_tasks_path(category), class:"text-1xl"%>
+          <div class="text-4xl font-bold"><%= category.title %></div>
+          <div class="text-xl font-bold"><%= category.description %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
 <% end %>
-
-<br><br>
-
-<%= link_to 'New Category', new_category_path %>
 

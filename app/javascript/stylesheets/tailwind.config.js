@@ -12,6 +12,7 @@ module.exports = {
         handlee: ['Handlee'],
         montserrat: ['Montserrat'],
         montez: ['Montez'],
+        pacifico: ['Pacifico'],
       },
     },
   },
