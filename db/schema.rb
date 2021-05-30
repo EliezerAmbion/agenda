@@ -32,9 +32,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_124330) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id"
-    t.bigint "user_id"
     t.index ["category_id"], name: "index_tasks_on_category_id"
-    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
 end
