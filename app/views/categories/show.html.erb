@@ -1,6 +1,12 @@
-<br><br>
+<%= render "shared/nav" %>
 
-<h1>Category</h1>
-<%= @category.title %>
+
+<br><br>
+<%= @category.title %><br>
+
+<% @category.tasks.each do |task| %>
+  <%= task.title %>
+  <%= task.description %>
+<% end %>
 
 <%= link_to "See all Tasks", category_tasks_path(@category) %>
