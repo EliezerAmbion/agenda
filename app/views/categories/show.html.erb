@@ -1,12 +1,19 @@
 <%= render "shared/nav" %>
 
 
-<br><br>
-<%= @category.title %><br>
+<div class="flex flex-col items-center">
+  <div class="text-5xl">
+    <%= @category.title %>
+  </div>
 
-<% @category.tasks.each do |task| %>
-  <%= task.title %>
-  <%= task.description %>
-<% end %>
+  <div class="flex text-3xl">
+    <% @category.tasks.each do |task| %>
+      <%= task.title %>
+      <%= task.description %>
+    <% end %>
+  </div>
 
-<%= link_to "See all Tasks", category_tasks_path(@category) %>
+
+
+  <%= link_to "Add task", new_category_task_path(@category) %>
+</div>
