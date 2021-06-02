@@ -1,14 +1,14 @@
 <%= render "shared/nav" %>
 
-<div class="flex flex-col items-center border max-w-4xl mx-auto mt-10 bg-gray-500 rounded">
-  <div class="flex justify-around items-center bg-black w-full mb-6">
+<div class="flex flex-col items-center max-w-4xl mx-auto mt-10 bg-transparent border border-black rounded-lg overflow-hidden transparent">
+  <div class="flex justify-around items-center bg-gradient-to-l from-blue-400 to-white w-full mb-6">
     <div class="flex flex-col items-center">
 
-      <span class="text-4xl font-semibold text-gray-200">
+      <span class="text-3xl font-semibold text-gray-800">
         <%= @category.title %>
       </span>
 
-      <em>
+      <em class="text-gray-800">
         <%= @category.description %>
       </em>
     </div>
@@ -30,21 +30,19 @@
   <% else %>
 
     <% @category.tasks.each do |task| %>
-      <div class="flex justify-center border w-11/12 mx-auto rounded mb-2">
+      <div class="flex justify-center border w-11/12 mx-auto rounded mb-1">
         <div class="flex justify-between w-full">
 
           <div class="flex flex-col items-center">
-            <span class="text-2xl font-medium text-gray-200">
+            <span class="text-2xl font-medium text-gray-800">
               <%= task.title %>
             </span>
-            
+    
             <em>
               <%= task.description %>
             </em>
 
-            <span class="text-2xl font-medium text-gray-200">
               <%= task.deadline %>
-            </span>
           </div>
 
           <div class="flex justify-around items-center w-1/4">
