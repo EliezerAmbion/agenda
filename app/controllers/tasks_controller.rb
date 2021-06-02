@@ -33,7 +33,7 @@ class TasksController < ApplicationController
     @task = @category.tasks.find(params[:id])
 
     if @task.update(task_params)
-      redirect_to category_task_url(@category)
+      redirect_to category_url(@category)
 
     else
       render :edit

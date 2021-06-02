@@ -35,7 +35,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   test "should update a task" do
     put category_task_url(@category, @task), params: { task: {title: 'Unique update', description: @task.description, deadline: Date.tomorrow, done: false } }
 
-    assert_redirected_to category_task_url(@category)
+    assert_redirected_to category_url(@category)
   end
 
   test "should delete a task" do
