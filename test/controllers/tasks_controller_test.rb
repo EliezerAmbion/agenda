@@ -19,7 +19,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   test "should create a task" do
     post category_tasks_url(@category), params: { task: {title: 'Unique', description: @task.description, deadline: Date.tomorrow, done: false } }
 
-    assert_redirected_to category_tasks_path(@category)
+    assert_redirected_to category_path(@category)
   end
 
   test "should show a task" do
@@ -40,6 +40,6 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test "should delete a task" do
     delete category_task_url(@category, @task)
-    assert_redirected_to category_tasks_url(@category)
+    assert_redirected_to category_url(@category)
   end
 end

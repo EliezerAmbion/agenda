@@ -14,7 +14,7 @@ class TasksController < ApplicationController
 
     # if @task.valid?
       if @task.save
-      redirect_to category_tasks_path(@category)
+      redirect_to category_path(@category)
 
     else
       render :new
@@ -43,7 +43,7 @@ class TasksController < ApplicationController
   def destroy
     @task = @category.tasks.find(params[:id])
     @task.destroy
-    redirect_to category_tasks_url(@category)
+    redirect_to category_url(@category)
   end
 
   private 
