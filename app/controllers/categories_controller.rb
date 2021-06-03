@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id]) 
+    @category = Category.find(params[:id])
   end
 
   def edit
@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
       redirect_to home_path
 
     else
-      render :edit
+      redirect_to home_path
     end
   end
 

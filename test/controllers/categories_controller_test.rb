@@ -17,9 +17,9 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create category" do
     assert_difference 'Category.count', 1 do
-      post categories_url(@category), params: { category: { title: 'category title create', description: 'category desction create' } }
+      post categories_url(@category), params: { category: { title: 'category title create', description: 'category description create' } }
     end
-# home_url is index
+    # home_url is index
     assert_redirected_to home_url(Category.last)
   end
 
@@ -34,7 +34,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update category" do
-    put category_url(@category), params: { category: { title: 'category title update', description: 'category desction update' } }
+    put category_url(@category), params: { category: { title: 'category title update', description: 'category description update' } }
     assert_redirected_to home_url
   end
 

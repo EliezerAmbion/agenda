@@ -18,4 +18,22 @@ class TaskTest < ActiveSupport::TestCase
 
     assert_not task.save, "Saved category without a description"
   end
+
+  test "Check length of TITLE if MORE than 20 chars" do
+    task = Task.create(
+      title: "Sample title with more than 20 chars",
+      description: "Sample description."
+    )
+
+    assert_not task.save, "Saved title. Current length: #{task.title.length}"
+  end
+
+  test "Check length of DESCRIPTION if MORE than 50 chars" do
+    task = Task.create(
+      title: "Sample title",
+      description: "A sample description with more than 50 characters in length"
+    )
+
+    assert_not task.save, "Saved description. Current length: #{task.description.length}"
+  end
 end
