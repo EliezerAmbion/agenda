@@ -1,20 +1,37 @@
 <%= render "shared/nav" %>
 
+<div class="flex justify-evenly">
 
-<div class="flex justify-evenly text-black">
-  <div>
-    <%= form_with scope: :category, url: @category, method: :put, local: true do |f| %>
+  <div class="pr-10">
+    <div class="max-w-3xl text-center mt-8 p-5 rounded bg-gradient-to-r from-blue-200 to-transparent shadow-md">  
+      <%= form_with scope: :category, url: @category, method: :put, local: true do |f| %>
 
-      <div class="flex flex-col space-y-5 mt-16">
-        <%= f.text_field :title, placeholder: " Agenda Title", class: "w-full placeholder-gray-700 focus:placeholder-gray-400 rounded-md w-full py-2"%>
-        <%= f.text_area :description, size: "40x10", placeholder: " Agenda Description", class: "placeholder-gray-700 focus:placeholder-gray-400 rounded-md"%>
-      </div>
+        <div class="font-bold text-gray-800 text-4xl">
+          Edit Agenda
+        </div>
+        
+        <div class="flex flex-col space-y-5 mt-5 text-black">
+          <%= f.text_field :title, placeholder: "Agenda Title", class: "w-full placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md py-2 outline-none", style:"background: rgba(250,250,250,.4)" %>
+          <%= f.text_area :description, size: "40x10", placeholder: " Agenda Description", class: "placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md outline-none", style:"background: rgba(250,250,250,.4)" %>
+        </div>
 
-      <%= f.submit 'Edit Agenda', class:"flex flex-end bg-yellow-300 px-3 py-2 rounded-md hover:bg-yellow-400 cursor-pointer mt-5" %>
-
-    <% end %>
+        <%= f.submit 'Edit Agenda', class:"flex justify-end bg-yellow-300 px-3 py-2 rounded-md hover:bg-yellow-400 cursor-pointer text-black mt-5" %>
+      
+      <% end %>
+    </div>
   </div>
-  
-  <%= image_tag("checklist-animate.svg",  class:"w-1/3") %>
+
+  <%= image_tag("checklist-animate.svg", class:"w-1/3") %>
 
 </div>
+
+
+<% if @category.errors.any? %>
+  <ul>
+    <% @category.errors.full_messages.each do |message| %>
+      <li>
+        <%= message %>
+      </li>
+      <% end %>
+  </ul>
+<% end %>
