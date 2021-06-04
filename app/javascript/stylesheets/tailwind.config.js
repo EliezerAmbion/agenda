@@ -13,6 +13,7 @@ module.exports = {
         montserrat: ['Montserrat'],
         montez: ['Montez'],
         pacifico: ['Pacifico'],
+        poppins: ['Poppins'],
       },
     },
   },

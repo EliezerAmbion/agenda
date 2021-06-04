@@ -8,7 +8,7 @@
       <div class="max-w-3xl text-center mt-8 p-5 rounded bg-gradient-to-r from-blue-300 via-indigo-300 to-transparent eli-form-box-shadow">  
         <%= form_with scope: :category, model: @category, local: true do |f| %>
 
-          <div class="font-bold text-gray-800 text-4xl">
+          <div class="font-bold text-4xl">
             New Agenda
           </div>
           
@@ -17,7 +17,7 @@
             <%= f.text_area :description, size: "40x10", placeholder: " Agenda Description", class: "placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md outline-none", style:"background: rgba(250,250,250,.4)" %>
           </div>
 
-          <%= f.submit 'Create Agenda', class:"flex justify-end bg-yellow-300 px-3 py-2 rounded-md hover:bg-yellow-400 cursor-pointer text-black mt-5" %>
+          <%= f.submit 'Create Agenda', class:"flex justify-end bg-pink-200 px-3 py-2 rounded-md hover:bg-pink-300 cursor-pointer text-black mt-4" %>
         
         <% end %>
       </div>
