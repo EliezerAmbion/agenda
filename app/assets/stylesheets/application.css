@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.eli-form-box-shadow {
+  box-shadow: 3px 3px 10px 2px rgb(87, 139, 165);
+}
