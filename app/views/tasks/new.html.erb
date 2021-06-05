@@ -25,14 +25,3 @@
     </div>
 
 </div>
-
-
-<% if @category.errors.any? %>
-  <ul>
-    <% @category.errors.full_messages.each do |message| %>
-      <li>
-        <%= message %>
-      </li>
-      <% end %>
-  </ul>
-<% end %>

@@ -1,4 +1,4 @@
-<nav class="">
+<nav class="mb-8">
   <div class="flex justify-between max-w-6xl mx-auto py-2 px-2 items-center border-b border-opacity-40 border-black">
     <div class="text-gray-700 font-extrabold text-4xl hover:text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-black font-poppins"><%= link_to 'agenda', home_path %></div>
 
@@ -29,4 +29,9 @@
     </div>
   </div>
 
+  <div>
+    <%= render "shared/flash_messages" %>
+  </div>
+  
 </nav>
+

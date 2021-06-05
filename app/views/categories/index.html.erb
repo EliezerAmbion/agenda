@@ -1,4 +1,5 @@
 <%= render "shared/nav" %>
+
 <br>
 
 <% if @categories.count == 0 %>
@@ -15,7 +16,7 @@
 <% else %>
 
   <div class="flex justify-center">
-    <div class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-20 m-6 max-w-6xl">
+    <div class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-20 max-w-6xl">
       <% @categories.each do |category| %>
         <div class="w-80 h-44 m-auto flex-col space-y-3 p-6 rounded-lg bg-gradient-to-br from-white to-transparent eli-form-box-shadow">
 

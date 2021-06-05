@@ -13,8 +13,9 @@ class CategoriesController < ApplicationController
     if @category.valid?
         @category.save
         redirect_to home_path
+        flash[:notice] = "Successfully Created an agenda"
     else
-      render :new
+      redirect_to new_category_path, notice: @category.errors.full_messages.first
     end
   end
 
@@ -30,10 +31,10 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category.update(category_params)
-      redirect_to home_path
+      redirect_to home_path, notice: "Successfully Edited agenda"
 
     else
-      redirect_to home_path
+      redirect_to edit_category_path, notice: @category.errors.full_messages.first
     end
   end
 

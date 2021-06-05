@@ -13,3 +13,10 @@ import 'stylesheets/application';
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
+
+function hideFlash() {
+  setInterval(function () {
+    document.querySelector('.type').style.display = 'none';
+  }, 2000);
+}
+hideFlash();

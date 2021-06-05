@@ -1,38 +1,26 @@
 <%= render "shared/nav" %>
 
-
 <div class="flex justify-evenly">
 
   <%= image_tag("checklist-animate (1).svg", class:"w-1/3") %>
 
-    <div class="pr-10">
-      <div class="max-w-3xl text-center mt-8 p-5 rounded bg-gradient-to-r from-blue-300 via-indigo-300 to-transparent eli-form-box-shadow">  
-        <%= form_with scope: :category, model: @category, local: true do |f| %>
+  <div class="pr-10">
+    <div class="max-w-3xl text-center mt-8 p-5 rounded bg-gradient-to-r from-blue-300 via-indigo-300 to-transparent eli-form-box-shadow">  
+      <%= form_with scope: :category, model: @category, local: true do |f| %>
 
-          <div class="font-bold text-4xl">
-            New Agenda
-          </div>
-          
-          <div class="flex flex-col space-y-3 mt-5 text-black">
-            <%= f.text_field :title, placeholder: " Agenda Title", class: "w-full placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md py-2 outline-none", style:"background: rgba(250,250,250,.4)" %>
-            <%= f.text_area :description, size: "40x10", placeholder: " Agenda Description", class: "placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md outline-none", style:"background: rgba(250,250,250,.4)" %>
-          </div>
-
-          <%= f.submit 'Create Agenda', class:"flex justify-end bg-pink-200 px-3 py-2 rounded-md hover:bg-pink-300 cursor-pointer text-black mt-4" %>
+        <div class="font-bold text-4xl">
+          New Agenda
+        </div>
         
-        <% end %>
-      </div>
+        <div class="flex flex-col space-y-3 mt-5 text-black">
+          <%= f.text_field :title, placeholder: " Agenda Title", class: "w-full placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md py-2 outline-none", style:"background: rgba(250,250,250,.4)" %>
+          <%= f.text_area :description, size: "40x10", placeholder: " Agenda Description", class: "placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md outline-none", style:"background: rgba(250,250,250,.4)" %>
+        </div>
+
+        <%= f.submit 'Create Agenda', class:"flex justify-end bg-pink-200 px-3 py-2 rounded-md hover:bg-pink-300 cursor-pointer text-black mt-4" %>
+      
+      <% end %>
     </div>
+  </div>
 
 </div>
-
-
-<% if @category.errors.any? %>
-  <ul>
-    <% @category.errors.full_messages.each do |message| %>
-      <li>
-        <%= message %>
-      </li>
-      <% end %>
-  </ul>
-<% end %>

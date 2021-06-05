@@ -35,7 +35,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update category" do
     put category_url(@category), params: { category: { title: 'category title update', description: 'category description update' } }
-    assert_redirected_to home_url
+    assert_redirected_to edit_category_path
   end
 
   test "should destroy category" do
