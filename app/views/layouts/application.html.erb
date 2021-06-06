@@ -13,7 +13,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="h-screen bg-gradient-to-tr from-blue-300 via-indigo-200 to-pink-200 font-montserrat text-gray-700 tracking-tighter">
+  <body class="h-screen bg-gradient-to-tr from-blue-300 via-indigo-200 to-pink-100 font-montserrat text-gray-700 tracking-tighter">
+  <%= render "shared/nav" %>
+  <%= render "shared/flash_messages" %>
     <%= yield %>
   </body>
 </html>

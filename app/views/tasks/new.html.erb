@@ -1,11 +1,9 @@
-<%= render "shared/nav" %>
-
 <div class="flex justify-evenly">
 
   <%= image_tag("checklist-animate (1).svg", class:"w-1/3") %>
 
     <div class="pr-10">
-      <div class="max-w-3xl text-center mt-8 p-5 rounded bg-gradient-to-r from-blue-300 via-indigo-300 to-transparent eli-form-box-shadow">  
+      <div class="max-w-3xl text-center mt-8 p-5 rounded bg-gradient-to-tr from-blue-300 to-transparent eli-form-box-shadow">  
         <%= form_with scope: :task, model: [@category, @task], local: true do |f| %>
 
           <div class="font-bold text-gray-800 text-4xl">
@@ -18,7 +16,7 @@
             <%= f.date_field :deadline, class: "rounded", style:"background: rgba(250,250,250,.4)" %>
           </div>
 
-          <%= f.submit 'Create Task', class:"flex justify-end bg-pink-200 px-3 py-2 rounded-md hover:bg-pink-300 cursor-pointer text-black mt-4" %>
+          <%= f.submit 'Create Task', class:"flex justify-end bg-blue-500 px-3 py-2 text-white rounded-md hover:bg-blue-600 cursor-pointer hover:text-white mt-4" %>
         
         <% end %>
       </div>

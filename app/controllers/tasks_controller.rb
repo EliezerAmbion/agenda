@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_category
 
   def index
@@ -15,9 +16,10 @@ class TasksController < ApplicationController
     # if @task.valid?
       if @task.save
       redirect_to category_path(@category)
+      flash[:notice] = "Successfully Created a Task"
 
     else
-      render :new
+      redirect_to new_category_task_path, alert: @task.errors.full_messages.first
     end
   end
 
@@ -34,16 +36,17 @@ class TasksController < ApplicationController
 
     if @task.update(task_params)
       redirect_to category_url(@category)
+      flash[:notice] = "Successfully Updated Task"
 
     else
-      render :edit
+      redirect_to category_task_path, alert: @task.errors.full_messages.first
     end
   end
 
   def destroy
     @task = @category.tasks.find(params[:id])
     @task.destroy
-    redirect_to category_url(@category)
+    redirect_to category_url(@category), notice: "Successfully deleted Task"
   end
 
   private 

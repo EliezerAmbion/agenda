@@ -1,5 +1,14 @@
 <% flash.each do |type, msg| %>
-  <div class="flex justify-center type text-xl">
-    <%= msg %>
+  <div class="flex justify-center type text-xl fixed top-16 w-full z-10">
+
+    <%if type == "alert"%>
+      <div class="bg-red-200 px-4 py-1 rounded">
+    <% else %>
+      <div class="bg-green-200 px-4 py-1 rounded">
+    <% end %>
+
+      <%= msg %>
+    </div>
   </div>
+  
 <% end %>
