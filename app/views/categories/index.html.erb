@@ -14,7 +14,7 @@
   <div class="flex justify-center mt-8">
     <div class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-20 max-w-6xl">
       <% @categories.each do |category| %>
-        <div class="w-80 h-44 m-auto flex-col space-y-3 p-6 rounded-lg bg-gradient-to-bl from-white via-blue-50 to-blue-50 eli-form-box-shadow">
+        <div class="w-80 h-44 m-auto flex-col space-y-3 p-6 rounded-lg bg-gradient-to-b from-white via-blue-50 to-blue-100 eli-form-box-shadow">
 
           <div class="flex justify-center text-2xl font-bold border-b-2 border-black"><%= category.title %></div>
           <div class="text-md"><%= category.description.to_s.truncate(30) %></div>
