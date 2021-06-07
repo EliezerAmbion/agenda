@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
     @category = current_user.categories.find(params[:id])
 
     if @category.update(category_params)
-      redirect_to home_path, notice: "Successfully Edited agenda"
+      redirect_to home_path, notice: "Successfully Updated agenda"
 
     else
       redirect_to edit_category_path, alert: @category.errors.full_messages.first
