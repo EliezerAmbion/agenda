@@ -1,7 +1,7 @@
 <div class="flex justify-evenly">
 
-  <div class="pr-10">
-    <div class="max-w-3xl text-center mt-8 p-5 rounded bg-gradient-to-r from-blue-300 via-indigo-300 to-transparent eli-form-box-shadow">  
+  <div class="pl-10 mt-8">
+    <div class="max-w-3xl text-center mt-8 p-5 rounded bg-gradient-to-b from-blue-300 to-transparent eli-form-box-shadow">  
       <%= form_with scope: :category, url: @category, method: :put, local: true do |f| %>
 
         <div class="font-bold text-gray-800 text-4xl">
@@ -9,11 +9,11 @@
         </div>
         
         <div class="flex flex-col space-y-3 mt-5 text-black">
-          <%= f.text_field :title, placeholder: "Agenda Title", class: "w-full placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md py-2 outline-none", style:"background: rgba(250,250,250,.4)" %>
-          <%= f.text_area :description, size: "40x10", placeholder: " Agenda Description", class: "placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md outline-none", style:"background: rgba(250,250,250,.4)" %>
+          <%= f.text_field :title, placeholder: "Agenda Title", class: "w-full placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md py-2 outline-none", style:"background: rgba(250,250,250,.8)" %>
+          <%= f.text_area :description, size: "40x7", placeholder: " Agenda Description", class: "placeholder-gray-700 shadow-md focus:placeholder-gray-400 rounded-md outline-none resize-none", style:"background: rgba(250,250,250,.8)" %>
         </div>
 
-        <%= f.submit 'Edit Agenda', class:"flex justify-end bg-pink-200 px-3 py-2 rounded-md hover:bg-pink-300 cursor-pointer text-black mt-4" %>
+        <%= f.submit 'Edit Agenda', class:"flex justify-end bg-blue-50 px-3 py-2 rounded-md hover:bg-blue-400 cursor-pointer text-black mt-4" %>
       
       <% end %>
     </div>
