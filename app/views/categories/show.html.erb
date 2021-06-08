@@ -10,7 +10,7 @@
         <div class="absolute top-6 right-5 font-medium py-2 px-3 rounded eli-gradient-2 eli-color">
 
             <div class="flex justify-between items-center px-2">
-              <%= image_tag("png/plus.png", class:"w-3 h-3 ")%>
+              <%= image_tag("png/plus.png", class:"w-3 h-3 filter invert")%>
               <p class=" text-lg pl-2">Add Task</p>
             </div>
 
@@ -19,14 +19,14 @@
       <% end %>
 
       <h1 class="text-4xl font-bold mt-5 eli-color"><%= @category.title %></h1>
-      <em class="text-xl font-light mb-10"> <%= truncate(strip_tags(@category.description.to_s), length: 60) %></em>
+      <em class="text-xl font-light mb-10"> <%= @category.description.to_s %></em>
 
     </div>
 
     <% if @category.tasks.count == 0 %>
 
-      <div class="flex justify-center mt-1">
-        <h1>NO TASK YET UNDER THIS AGENDA!</h1>
+      <div class="flex justify-center my-2">
+        <h1>NO TASK UNDER THIS AGENDA!</h1>
       </div>
 
     <% else %>

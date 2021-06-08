@@ -1,9 +1,9 @@
 <nav class="">
   <% if user_signed_in? %>
 
-    <div class="flex justify-between max-w-6xl mx-auto py-2 px-2 items-center border-b border-opacity-40 border-black">
+    <div class="flex justify-between max-w-6xl mx-auto py-1 px-2 items-center border-b border-opacity-40 border-gray-100">
     
-      <div class="font-extrabold text-4xl hover:text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-black font-poppins">
+      <div class="font-extrabold text-4xl py-1 hover:text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-gray-100 font-poppins">
         <%= link_to 'agenda', home_path %>
       </div>
 
@@ -18,11 +18,11 @@
         </div>
 
         <div class="flex items-center rounded-lg px-2 hover:underline">
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"px-2 py-2" %>
+          <%= link_to 'Edit Profile', edit_user_registration_path, class:"px-2 py-2" %>
         </div>
 
         <div class="flex items-center rounded-lg px-2 hover:underline">
-          <%= link_to 'Edit Profile', edit_user_registration_path, class:"px-2 py-2" %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"px-2 py-2" %>
         </div>
       
       </div>
@@ -39,16 +39,10 @@
       <div class="flex justify-around w-2/12 text-lg font-bold">
 
         <div class="flex items-center hover:underline">
-          <%# <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-          </svg> %>
           <%= link_to 'Sign in', new_user_session_path, class:"px-2 py-2" %>
         </div>
 
         <div class="flex items-center hover:underline rounded-md eli-gradient-2 px-2">
-          <%# <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-          </svg> %>
           <%= link_to 'Sign up', new_user_registration_path, class:"px-2 py-2" %>
         </div>
 
