@@ -13,36 +13,42 @@
   </section>
 
 <% else %>
-  
-  <section class="flex justify-center mt-10 mb-32">
-    <div class="flex flex-wrap  gap-14 max-w-6xl">
-      <% @categories.each do |category| %>
-        <% category.tasks.each do |task| %>
-          <% if task.deadline == Date.today %>
 
-              <div class="w-84 h-48 m-auto flex-col space-y-3 p-6 rounded-lg bg-gradient-to-b from-white via-blue-50 to-blue-100 eli-form-box-shadow">
-                <div class="text-center text-2xl font-bold border-b-2 border-black"><%= task.title %></div>
-                <div class="text-md"><%= category.description.to_s.truncate(30) %></div>
+  <% @categories.each do |category|%>
+    <% if category.tasks.any?{|task| task.deadline == Date.today}%>
 
-                <div>
-                  <div class="flex justify-between mt-10">
+      <div class="flex justify-center mt-5">
+        <div class="flex flex-wrap gap-14 max-w-6xl">
+      
+          <% @categories.each do |category| %>
+            <% category.tasks.each do |task| %>
+              <% if task.deadline == Date.today %>
+
+                <div class="w-84 h-48 m-auto flex-col space-y-3 p-6 rounded-lg bg-gradient-to-b from-white via-blue-50 to-blue-100 eli-form-box-shadow">
+                  <div class="text-center text-2xl font-bold border-b-2 border-black"><%= task.title %></div>
+                    <div class="text-md"><%= category.description.to_s.truncate(30) %></div>
                     <div>
-                      <h1 class="font-bold">URGENT TASK!</h1>
+                      <div class="flex justify-between mt-10">
+                        <div>
+                          <h1 class="font-bold">URGENT TASK!</h1>
+                        </div>
+
+                        <section class="flex">
+                          <%= link_to image_tag("png/open-folder-with-document.png"), category_path(category), class:"w-7 transform duration-100 hover:scale-110 transition ease-in" %>
+                        </section>
+                      </div>
                     </div>
-
-                    <section class="flex">
-                      <%= link_to image_tag("png/open-folder-with-document.png"), category_path(category), class:"w-7 transform duration-100 hover:scale-110 transition ease-in" %>
-                    </section>
-                  </div>
                 </div>
-              </div>
 
+              <%end%>
+            <%end%>
           <%end%>
-        <%end%>
-      <%end%>
-    </div>
-  </section>
 
+        </div>
+      </div>
+
+    <%end%>
+  <%end%>
 
   <section class="h-screen">
     <div class="mb-20">
