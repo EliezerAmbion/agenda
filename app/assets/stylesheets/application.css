@@ -14,6 +14,41 @@
  *= require_self
  */
 
+body {
+  background-image: linear-gradient(to bottom right, #0c7bb3 0%, #f2bae8 100%);
+}
+
 .eli-form-box-shadow {
-  box-shadow: 2px 2px 3px 1px rgb(28, 81, 107);
+  box-shadow: 2px 2px 3px 1px rgb(19, 59, 78);
+}
+
+.eli-gradient {
+  background-color: #b1bfd8;
+  background-image: linear-gradient(315deg, #b1bfd8 0%, #728fc5 74%);
+}
+
+.eli-gradient-2 {
+  background-color: #7f5a83;
+  background-image: linear-gradient(to bottom right, #7f5a83 0%, #1a5f91 74%);
+}
+.eli-gradient-2:hover {
+  background-color: #7f5a83;
+  background-image: linear-gradient(to bottom right, #7f5a83 0%, #0f3c5c 74%);
+}
+
+.eli-gradient-3 {
+  background-color: #b1bfd8;
+  background-image: linear-gradient(to top, #b1bfd8 0%, #8fabdf 74%);
+}
+
+.eli-color {
+  color: aliceblue;
+}
+
+nav {
+  color: aliceblue;
+}
+
+.eli-input-box {
+  background-color: rgba(255, 255, 255, 0.85);
 }
