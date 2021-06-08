@@ -8,7 +8,7 @@ class UserTest < ActiveSupport::TestCase
   test "a user can create an account" do
     user = User.create(
       email: "sample@email.com",
-      password: "sample123456"
+      password: "123456"
     )
 
     assert user.save, "Created a user"
@@ -17,7 +17,7 @@ class UserTest < ActiveSupport::TestCase
   test "check the presence of email if nil" do
     user = User.create(
       email: nil,
-      password: "sample123456"
+      password: "123456"
     )
 
     assert_not user.save, "Saved user without email"
@@ -30,5 +30,14 @@ class UserTest < ActiveSupport::TestCase
     )
 
     assert_not user.save, "Saved user without password"
+  end
+
+  test "email must be unique" do
+    user = User.create(
+      email: "eli@email.com",
+      password: "123456"
+    )
+
+    assert_not user.save, "Saved user with duplicate email"
   end
 end
