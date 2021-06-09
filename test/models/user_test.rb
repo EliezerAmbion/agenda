@@ -7,6 +7,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "a user can create an account" do
     user = User.create(
+      username: "sample_username",
       email: "sample@email.com",
       password: "123456"
     )

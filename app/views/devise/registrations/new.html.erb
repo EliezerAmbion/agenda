@@ -9,8 +9,13 @@
 
           <div class="flex flex-col space-y-3">
             <div class="field">
+              <%= f.label :username %><br />
+              <%= f.text_field :username, autofocus: true, size:30, placeholder:"username", class:"p-2 rounded outline-none eli-input-box" %>
+            </div>
+
+            <div class="field">
               <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", size:30, placeholder:"email", class:"p-2 rounded outline-none eli-input-box" %>
+              <%= f.email_field :email, autocomplete: "email", size:30, placeholder:"email", class:"p-2 rounded outline-none eli-input-box" %>
             </div>
 
             <div class="field">
