@@ -17,6 +17,6 @@ ActiveStorage.start();
 function hideFlash() {
   setInterval(function () {
     document.querySelector('.type').style.display = 'none';
-  }, 2000);
+  }, 2500);
 }
 hideFlash();

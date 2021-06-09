@@ -9,20 +9,24 @@
 
       <div class="flex justify-around w-4/10 text-lg font-bold">
 
-        <div class="flex items-center rounded-lg px-2 hover:underline">
+        <div class="px-2 hover:underline">
           <%= link_to 'Home', home_path, class:"px-2 py-2" %>
         </div>
 
-        <div class="flex items-center rounded-lg px-2 hover:underline">
+        <div class="px-2 hover:underline">
           <%= link_to 'Add Agenda', new_category_path, class:"px-2 py-2" %>
         </div>
 
-        <div class="flex items-center rounded-lg px-2 hover:underline">
-          <%= link_to 'Edit Profile', edit_user_registration_path, class:"px-2 py-2" %>
-        </div>
 
-        <div class="flex items-center rounded-lg px-2 hover:underline">
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"px-2 py-2" %>
+        <div class="px-2 right-profile">
+          <a class="eli-menu-button px-2 py-2 cursor-pointer hover:underline " >Profile</a>
+
+          <div class="dropdown-menu rounded bg-gray-600 p-2 w-10/12">
+            <div class="flex flex-col">
+              <%= link_to 'Edit Profile', edit_user_registration_path, class:"px-2 py-2 hover:underline eli-field-menu" %>
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"px-2 py-2 hover:underline eli-field-menu" %>
+            </div>
+          </div>
         </div>
       
       </div>

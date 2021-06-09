@@ -52,3 +52,17 @@ nav {
 .eli-input-box {
   background-color: rgba(255, 255, 255, 0.85);
 }
+
+.right-profile {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 28px;
+  min-width: 120px;
+  z-index: 1;
+}
+.right-profile:hover .dropdown-menu {
+  display: block;
+}
